@@ -1,0 +1,52 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CrearLogGroup",
+      "Effect": "Allow",
+      "Action": "logs:CreateLogGroup",
+      "Resource": "arn:aws:logs:us-east-2:<ID_CUENTA_AWS>:log-group:/aws/lambda/obtener-historial-corrosion"
+    },
+    {
+      "Sid": "EscribirSusLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-2:<ID_CUENTA_AWS>:log-group:/aws/lambda/obtener-historial-corrosion:*"
+    },
+    {
+      "Sid": "EmpresaDelUsuario",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetItem"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-2:<ID_CUENTA_AWS>:table/usuarios"
+    },
+    {
+      "Sid": "LeerDispositivos",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:Scan"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-2:<ID_CUENTA_AWS>:table/dispositivos"
+    },
+    {
+      "Sid": "LeerHistorial",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:Query"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-2:<ID_CUENTA_AWS>:table/resultados_corrosion"
+    },
+    {
+      "Sid": "FirmarLecturaDeFoto",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::imagenes-corrosion-detector/paneles/*"
+    }
+  ]
+}

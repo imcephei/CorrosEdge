@@ -1,0 +1,12 @@
+{
+  "BudgetName": "corrosedge-mensual",
+  "BudgetLimit": {
+    "Amount": "5",
+    "Unit": "USD"
+  },
+  "TimeUnit": "MONTHLY",
+  "BudgetType": "COST",
+  "CostTypes": {
+    "IncludeCredit": false
+  }
+}

@@ -1,0 +1,15 @@
+# Nunca subir credenciales ni claves
+claves-dispositivos.txt
+device-keys.json
+api_key.txt
+*_api_key
+.env
+*.pem
+*.key
+.aws/
+# Paquetes y salidas generadas
+*.zip
+salida.json
+response.json
+__pycache__/
+Thumbs.db
